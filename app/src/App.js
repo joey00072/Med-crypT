@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import Login from './components/login'
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Login from "./components/login";
 function App() {
-  return (
-<login></login>
-  );
+  return <Login />;
 }
 
 export default App;

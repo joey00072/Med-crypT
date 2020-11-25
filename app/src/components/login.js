@@ -8,9 +8,9 @@ import React, { Component } from "react";
 import AccountCircleOutlined from "@material-ui/icons/AccountCircleOutlined";
 import PersonPin from "@material-ui/icons/PersonPin";
 import Avatar from "@material-ui/core/Avatar";
-import food from "";
+import Background from "./../images/background.jpg";
 import Divider from "@material-ui/core/Divider";
-
+import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 class MaterialSignin extends Component {
   state = {
     email: "",
@@ -32,7 +32,18 @@ class MaterialSignin extends Component {
   render() {
     return (
       <Grid container lg={12} xl={12} sm={12} xs={12} style={styles.outerGrid}>
-        <Grid sm={1} xs={0} />
+        <Grid sm={5} xs={1} className={styles.img}>
+          <Box style={styles.mainBox}>
+            <Box style={styles.largeEmptyBox} />
+
+            <Grid container justify="center">
+              {/* <Avatar style={styles.avatar2}>
+                <LocalHospitalIcon style={styles.avatarIcon2} />
+              </Avatar> */}
+            </Grid>
+          </Box>
+        </Grid>
+        <Grid sm={1} xs={1} />
         <Grid
           item
           alignItems="center"
@@ -101,7 +112,7 @@ class MaterialSignin extends Component {
             </Box>
           </Paper>
         </Grid>
-        <Grid sm={6} xs={1} />
+        <Grid sm={1} xs={0} />
       </Grid>
     );
   }
@@ -109,8 +120,13 @@ class MaterialSignin extends Component {
 
 const styles = {
   outerGrid: {
-    height: "100vh",
-    backgroundImage: `url(${food})`,
+    // height: "100vh",
+    // backgroundColor: "#4A3ECD",
+    width: "100%",
+    height: "100%",
+    // overflow: "hidden",
+    // position: "relative",
+    backgroundImage: `url(${Background})`,
     backgroundRepeat: "no-repeat",
   },
   mainBox: {
@@ -126,9 +142,19 @@ const styles = {
     height: 80,
     backgroundColor: "maroon",
   },
+  avatar2: {
+    marginTop: " 100px",
+    width: 160,
+    height: 160,
+    backgroundColor: "rgb(0,0,0,0)",
+  },
   avatarIcon: {
     height: 80,
     width: 80,
+  },
+  avatarIcon2: {
+    height: 130,
+    width: 130,
   },
   emptyBox: {
     height: 10,
@@ -171,6 +197,16 @@ const styles = {
   gText: { marginRight: 10 },
   icon: { marginRight: 5 },
   signupPaper: { marginTop: 15 },
+  logo: {
+    backgroundImage: `url(./../images/background_icon.png)`,
+  },
+  img: {
+    margin: "auto",
+    display: "block",
+    maxWidth: "100px",
+    maxHeight: "100px",
+    backgroundImage: `url(${Background})`,
+  },
 };
 
 export default MaterialSignin;
