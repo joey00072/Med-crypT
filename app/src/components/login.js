@@ -36,11 +36,7 @@ class MaterialSignin extends Component {
           <Box style={styles.mainBox}>
             <Box style={styles.largeEmptyBox} />
 
-            <Grid container justify="center">
-              {/* <Avatar style={styles.avatar2}>
-                <LocalHospitalIcon style={styles.avatarIcon2} />
-              </Avatar> */}
-            </Grid>
+            <Grid container justify="center"></Grid>
           </Box>
         </Grid>
         <Grid sm={1} xs={1} />
