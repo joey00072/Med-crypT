@@ -11,10 +11,12 @@ import Avatar from "@material-ui/core/Avatar";
 import Background from "./../images/background.jpg";
 import Divider from "@material-ui/core/Divider";
 import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
+import Dashbord from "./Dashboard";
 class MaterialSignin extends Component {
   state = {
     email: "",
     password: "",
+    login: true,
   };
 
   handleEmail(text) {
@@ -28,7 +30,9 @@ class MaterialSignin extends Component {
       password: text.target.value,
     });
   }
-
+  handleLogin(props) {
+    this.props.history.replace("/dashbord");
+  }
   render() {
     return (
       <Grid container lg={12} xl={12} sm={12} xs={12} style={styles.outerGrid}>
@@ -81,6 +85,7 @@ class MaterialSignin extends Component {
                 style={styles.signinButton}
                 color="primary"
                 variant="contained"
+                onClick={this.handleLogin.bind(this)}
               >
                 Signin
               </Button>
