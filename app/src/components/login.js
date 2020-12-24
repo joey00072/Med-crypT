@@ -39,7 +39,6 @@ class MaterialSignin extends Component {
         <Grid sm={5} xs={1} className={styles.img}>
           <Box style={styles.mainBox}>
             <Box style={styles.largeEmptyBox} />
-
             <Grid container justify="center"></Grid>
           </Box>
         </Grid>
@@ -57,11 +56,15 @@ class MaterialSignin extends Component {
           <Paper elevation={5} style={styles.paperContainer}>
             <Box style={styles.mainBox}>
               <Box style={styles.largeEmptyBox} />
+              <Box style={styles.largeEmptyBox} />
+              <Box style={styles.largeEmptyBox} />
               <Grid container justify="center">
                 <Avatar style={styles.avatar}>
                   <PersonPin style={styles.avatarIcon} />
                 </Avatar>
               </Grid>
+              <Box style={styles.largeEmptyBox} />
+              <Box style={styles.largeEmptyBox} />
               <Box style={styles.emptyBox} />
               <TextField
                 type="email"
@@ -93,23 +96,6 @@ class MaterialSignin extends Component {
               <Button padding={0} color="primary" variant="text" size="small">
                 Forgot password
               </Button>
-              <Box style={styles.emptyBox} />
-              <Divider component="strong" />
-              <Paper elevation={3} justify="center" style={styles.signupPaper}>
-                <Button style={styles.signupButton}>
-                  <AccountCircleOutlined style={styles.icon} />
-                  Signup to get started
-                </Button>
-              </Paper>
-              <Box style={styles.largeEmptyBox} />
-              <Paper elevation={3}>
-                <Button style={styles.paperButtons}>
-                  <Typography style={styles.gText} variant="h5">
-                    G
-                  </Typography>{" "}
-                  Signin with Google
-                </Button>
-              </Paper>
             </Box>
           </Paper>
         </Grid>
