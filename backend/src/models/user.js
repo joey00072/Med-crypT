@@ -30,6 +30,7 @@ const userSchema = new mongoose.Schema(
       trim: true,
       unique: true,
     },
+
     hash_password: {
       type: String,
       required: true,
@@ -52,13 +53,15 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.virtual("password").set(function (password) {
+  console.log(password);
   this.hash_password = bcrypt.hashSync(password, 10);
 });
 
-userSchema.methoed={
-    authenticate:function(possword)=>{
-        retrun bcrypt.compare(password,this.hash_password)
-    }
-}
+userSchema.methoed = {
+  authenticate: (possword) => {
+    console.log(password);
+    bcrypt.compareSync(password, this.hash_password);
+  },
+};
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = User = mongoose.model("User", userSchema);

@@ -14,6 +14,9 @@ mongoose
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      // userCreateIndex: true,
+      useCreateIndex: true,
+      // useNewUrlParser: true,
     }
   )
   .then((e) => {
@@ -21,6 +24,13 @@ mongoose
   });
 
 app.use("/api", userRoutes);
+
+app.post("/post", (req, res, next) => {
+  console.log(req.body);
+  res.status(200).json({
+    message: req.body,
+  });
+});
 
 app.listen(process.env.PORT, () => {
   console.log(`STARTED on Port ${process.env.PORT}`);
