@@ -1,13 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const env = require("dotenv");
-const BodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const app = express();
-const userRoutes = require("./routes/user");
+const userRoutes = require("./routes/auth");
 env.config();
 
-app.use(BodyParser());
-
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser());
+// app.use(bodyParser.urlencoded());
+// app.use(bodyParser.json());
+// app.use(express.json());
 mongoose
   .connect(
     `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.jg3k8.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`,
@@ -24,13 +27,6 @@ mongoose
   });
 
 app.use("/api", userRoutes);
-
-app.post("/post", (req, res, next) => {
-  console.log(req.body);
-  res.status(200).json({
-    message: req.body,
-  });
-});
 
 app.listen(process.env.PORT, () => {
   console.log(`STARTED on Port ${process.env.PORT}`);
